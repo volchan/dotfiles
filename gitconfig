@@ -42,10 +42,11 @@
   autocorrect = 1
 
 [push]
-	default = simple
+  rebase = false
 
 [branch "master"]
   mergeoptions = --no-edit
+
 [user]
 	email = s.dlt@hotmail.fr
 	name = stephane de la torre
