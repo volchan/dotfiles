@@ -2,6 +2,16 @@ version: "3"
 
 tasks:
   apply:
-    desc: "Apply dotfiles eg. task apply (-- <package_name>)"
+    desc: "Apply dotfiles eg. task apply -- <package_name>"
     cmds:
-      - stow {{.CLI_ARGS | default "."}} -t $HOME
+      - stow --dotfiles {{.CLI_ARGS}} -t $HOME
+
+  apply:all:
+    desc: "Apply all dotfiles"
+    vars:
+      packages:
+        - powerlevel10k
+        - tmux
+        - zsh
+    cmds:
+      - stow --dotfiles -t $HOME {{range .packages}} {{.}} {{end}}

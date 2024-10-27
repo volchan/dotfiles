@@ -11,18 +11,16 @@ This repository contains my personal configuration files (dotfiles) managed usin
   cd dotfiles
   ```
 
-2. Install GNU Stow if you haven't already:
+2. Run the setup script:
 
   ```sh
-  sudo apt-get install stow  # For Debian-based systems
-  # or
-  brew install stow  # For macOS
+  sh ./scripts/setup.sh
   ```
 
-3. Run GNU Stow to create symlinks for the desired configuration:
+  The installation script will install GNU Stow if it is not already installed.
+
+3. apply all configuration files:
 
   ```sh
-  stow . # Symlink all configuration files
-  # or
-  stow <package_name> # Symlink configuration files for a specific package
+  task apply:all
   ```

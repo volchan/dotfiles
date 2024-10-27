@@ -9,6 +9,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
   fi
   /opt/homebrew/bin/brew install zsh
   /opt/homebrew/bin/brew install go-task
+  /opt/homebrew/bin/brew install stow
 
   if [[ $(uname -m) == 'arm64' ]]; then
     echo "M1 CPU detected"
