@@ -120,10 +120,6 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval $(thefuck --alias)
 
-# SonarCloud
-export SONAR_TOKEN="b606dcccbd26bf5c6c300e97f986d329c96c583c"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
 # cargo
 . "$HOME/.cargo/env"
 
