@@ -1,0 +1,7 @@
+version: "3"
+
+tasks:
+  apply:
+    desc: "Apply dotfiles eg. task apply (-- <package_name>)"
+    cmds:
+      - stow {{.CLI_ARGS | default "."}} -t $HOME
