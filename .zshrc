@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${whomai}.zsh" ]];
 fi
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -75,44 +74,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias vim='nvim'
-alias c='clear'
-alias gcm='git checkout $(git_main_branch)'
-alias gcs="git checkout staging"
-alias ggfp='git push -f origin $(git_current_branch)'
-alias rlzsh="exec zsh"
-
-# functions
-function gcfu() {
-  git commit --fixup $1
-}
-
-function gria() {
-  git rebase -i --autosquash $1^
-}
-
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@; }
-
-# usage: src <app_name>
-function src() {
-  scalingo -a $@ run rails c
-}
-
-function grab() {
-  git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D && ggl
-}
-
-function benchmark() {
-  number=$1
-  shift
-  for i in $(seq $number); do
-    echo "============================================"
-    echo "                 run $i"
-    echo "============================================"
-    $@
-  done
-}
+source $HOME/.aliases
 
 # Shell integrations
 eval "$(fzf --zsh)"
