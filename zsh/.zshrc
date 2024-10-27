@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${whomai}.zsh" ]];
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${whomai}.zsh"
 fi
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   export HOMEBREW_NO_ANALYTICS=1
   eval "$(/opt/homebrew/bin/brew shellenv)"
