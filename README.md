@@ -7,7 +7,7 @@ This repository contains my personal configuration files (dotfiles) managed usin
 1. Clone the repository:
 
   ```sh
-  git clone https://github.com/yourusername/dotfiles.git
+  git clone git@github.com:volchan/dotfiles.git
   cd dotfiles
   ```
 
